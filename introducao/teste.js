@@ -1,5 +1,5 @@
 "use strict";
-const a = 'Olá mundo!';
+var a = 'Olá mundo!';
 console.log(a);
 //Digitar o comando "tsc nomeArquivo.ts" irá realizar compilação do arquivo .ts gerando um arquivo .js correspondente a ele.
 /*Digitar o comando "tsc -w" o compilador irá monitorar todos os arquivos .ts que existem no projeto, e quaisquer mudanças que

@@ -2,10 +2,10 @@
 //-------------------------------------------------------noEmitOnError-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Opção noEmitOnError => opção que permite o compilador gerar arquivo .js mesmo existindo erros no código .ts 
 //Ex: atribuição inválida
-let canal = 'Gaveta';
-let inscritos = 610234;
+var canal = 'Gaveta';
+var inscritos = 610234;
 // canal = inscritos
-console.log(`Canal = ${canal}`);
+console.log("Canal = " + canal);
 // let nome:string = 'Victor' //Erro! A variável foi redeclarada com o mesmo nome que já existe em outro arquivo, ou seja, estão no mesmo escopo (namespace)
 // nome = 'Victor'
 // console.log(`Nome = ${nome}`)
@@ -23,7 +23,7 @@ gera erro pois como uma função pode ser chamada de várias formas, o compilado
 estão sendo tratados*/
 //Em funções aninhadas também ocorre o mesmo efeito
 //Neste caso, não ocorrerá erro, pois o compilador consegue mapear o tipo dos dados que estão sendo atribuídos a uma variável
-let qualquerCoisa;
+var qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = 'abc';
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
