@@ -13,7 +13,13 @@ class Produto {
 
   //Método da classe Produto
   public resumo(): string {
-    return `${this.nome} custa R$${this.preco} (${this.desconto * 100}% off)`;
+    return `${this.nome} custa R$${this.preco} (${
+      this.desconto * 100
+    }% off) - Valor líquido: R$${Math.ceil(this.precoDesconto())}`;
+  }
+
+  public precoDesconto(): number {
+    return this.preco - this.preco * this.desconto;
   }
 }
 
@@ -26,3 +32,7 @@ console.log(produto1, produto2);
 
 console.log(produto1.resumo());
 console.log(produto2.resumo());
+
+//Agora criar um método chamado precoComDesconto
+//Quais são os parâmetros e o retorno?
+//Alterar o método resumo para mostrar o preço com desconto

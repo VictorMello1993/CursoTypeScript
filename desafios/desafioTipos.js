@@ -3,17 +3,17 @@
   -Array de strings com os nomes dos supervisores
   -Função de bater ponto que recebe hora (número) e retorna uma string 'Ponto normal (<= 8) ' e 'Fora do horário > (> 8)'*/
 //Correção
-var funcionario = {
+let funcionario = {
     supervisores: ["João", "Alan", "Pedro", "Maria"],
-    baterPonto: function (horario) {
+    baterPonto(horario) {
         return horario <= 8 ? "Ponto normal" : "Fora do horário";
     },
 };
 console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(12));
-var funcionario2 = {
+let funcionario2 = {
     supervisores: ["Bia", "Carlos"],
-    baterPonto: function (horario) {
+    baterPonto(horario) {
         return horario <= 8 ? "Ponto normal" : "Fora do horário";
     },
 };
