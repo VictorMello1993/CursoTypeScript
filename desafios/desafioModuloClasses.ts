@@ -63,9 +63,10 @@
 //1) 
 class Moto{
 
-  constructor(public nome: string, public velocidade: number = 0){
-    this.nome = nome;
-    this.velocidade = velocidade;
+  public velocidade: number = 0
+
+  constructor(public nome: string){    
+
   }
 
   buzinar(){
@@ -82,3 +83,47 @@ moto.buzinar()
 console.log(moto.velocidade)
 moto.acelerar(30)
 console.log(moto.velocidade)
+
+//2) Herança
+class objeto2D{
+  constructor(public base: number = 0, public altura: number = 0){
+    this.base = base;
+    this.altura = altura;
+  }
+}
+
+class retangulo extends objeto2D{
+  area(){
+    return this.base * this.altura
+  }
+}
+
+const r1 = new retangulo(4, 5)
+r1.base = 10
+console.log(r1.area())
+
+//3)
+class estagiario{
+  private _primeiroNome: string = ''
+
+  public get PrimeiroNome(): string{
+    return this._primeiroNome
+  }
+
+  public set PrimeiroNome(valor: string){
+    if(valor.length >= 3){
+      this._primeiroNome = valor
+    }
+    else{
+      this._primeiroNome = ''
+    }
+  }
+  public enumerable: boolean = true;
+  public configurable: boolean = true;
+}
+
+const e1 = new estagiario()
+e1.PrimeiroNome = 'Victor'
+console.log(e1.PrimeiroNome)
+e1.PrimeiroNome = 'Vc'
+console.log(e1.PrimeiroNome)
