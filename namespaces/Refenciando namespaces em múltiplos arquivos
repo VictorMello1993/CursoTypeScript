@@ -1,0 +1,4 @@
+														REFERENCIANDO NAMESPACES EM VÁRIOS ARQUIVOS
+														
+														
+tsc -w nomeArquivoSaida.js caminhoArquivo1.ts, caminhoArquivo2.ts caminhoArquivo3.ts, ... ,caminhoArquivoN.ts
