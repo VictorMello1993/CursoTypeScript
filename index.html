@@ -27,5 +27,21 @@
     <!-- <script src="namespaces/namespacesAninhados.js"></script> -->
     <script src="namespaces/geometriaRect.js"></script>
     <script src="namespaces/geometriaCirc.js"></script>
+    <!-- <script src="modulos/modulos.js"></script> -->
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+      // //Resolvendo módulos para que o navegador consiga interpretá-los com a biblioteca systemjs
+      // SystemJS.config({
+        //   baseUrl: '/modulos', //Carregando os arquivos que estão no caminho absoluto /modulos/
+        //   packages:{
+          //     '/modulos':{
+            //       defaultJSExtension: true //Por padrão, será resolvido com a extensão .js
+            //     }
+            //   }
+            // })
+            
+            // SystemJS.import('./modulos/modulos.js') //Importando o módulo 'modulos.js'
+            </script>
+    <script src="./interfaces/interfaces.js"></script>
   </body>
 </html>

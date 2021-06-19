@@ -11,13 +11,13 @@
 //   }
 // }
 /*Utilizando a referência dos arquivos a serem utilizados na compilação do Typescript, sem precisar referenciá-los via
-linha de comando*/
+linha de comando tsc -w --outFile arquivoSaida.js arquivo1.ts, arquivo2.ts, ..., arquivoN.ts*/
 ///<reference path="geometriaCirc.ts"/>
 ///<reference path="geometriaRect.ts"/>
-const PI = 2.99;
+// const PI = 2.99
 console.log(Geometria.Area.circunferencia(10));
-console.log(Geometria.Area.retangulo(100, 20));
-console.log(PI);
+console.log(Geometria.Area.retangulo(10, 20));
+// console.log(PI)
 /*Namespace é um espaço de nome, como se diz na tradução do inglês, que é utilizado para evitar conflito de nomes
 que já tenham sido declarados anteriormente no escopo global (variáveis, métodos, classes, etc). Por padrão, uma
 vez que são definidas as variáveis, funções e classes, elas ficarão no escopo global. Para evitar conflito de

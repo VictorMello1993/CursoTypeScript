@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server"    
+    "start": "live-server"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/VictorMello1993/CursoTypeScript#readme",
   "dependencies": {
-    "live-server": "^1.2.1"
+    "@types/node": "^15.12.4",
+    "live-server": "^1.1.0",
+    "open": "^8.2.0",
+    "systemjs": "^0.21.6",
+    "urix": "^0.1.0",
+    "uuid": "^8.3.2"
   }
 }
