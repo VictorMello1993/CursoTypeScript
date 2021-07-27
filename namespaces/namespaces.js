@@ -11,7 +11,8 @@
 //   }
 // }
 /*Utilizando a referência dos arquivos a serem utilizados na compilação do Typescript, sem precisar referenciá-los via
-linha de comando tsc -w --outFile arquivoSaida.js arquivo1.ts, arquivo2.ts, ..., arquivoN.ts*/
+linha de comando tsc -w --outFile arquivoSaida.js arquivo1.ts, arquivo2.ts, ..., arquivoN.ts
+Basta simplesmente referenciar com o comando tsc -w --outFile namespaces.js namespaces.ts*/
 ///<reference path="geometriaCirc.ts"/>
 ///<reference path="geometriaRect.ts"/>
 // const PI = 2.99

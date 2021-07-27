@@ -27,8 +27,8 @@ console.log(echoV2<number>(27)) /*No momento que a função echoV2 é executado,
 const avaliacoes: Array<number> = [10, 9.3, 7.7]
 avaliacoes.push(8.4)
 // avaliacoes.push('5.5') //ERRO! Foi especificado como sendo array de number!
-
 console.log(avaliacoes)
+
 function print<T>(args: T[]){
   args.forEach(e => console.log(e))
 }
@@ -51,9 +51,60 @@ print<Student>([
 ])
 
 //Generics com tipo função
-// const callEcho: <T>(data:T) => T = echoV2
+// const callEcho: <T>(data:T) => T = echoV2 /*Uma variável será uma função do tipo T, cujo parâmetro é do tipo, e que retorna tipo T*/
 // console.log(callEcho<string>('Alguma coisa'))
 //Ou
 type Echo = <T>(data:T) => T 
 const callEcho: Echo = echoV2
 console.log(callEcho<string>('Alguma coisa'))
+
+
+//Generics com classes
+abstract class BinaryOperator<T, R>{
+  constructor(public op1: T, public op2: T){}
+
+  abstract execute(): R
+}
+
+//Na classe acima, percebe-se que é permitido estabelecer mais de um tipo nos generics
+
+//Instanciando classes sem utilizar generics
+// console.log(new BinaryOperator('Bom', 'Dia').execute())
+// console.log(new BinaryOperator(3, 7).execute())
+
+// /*Comportamento estranho. Concatenação de objetos (what???). 
+// Ao invés de validar o tipo de parâmetro, simplesmente transforma tudo isso em representação de string e concatena junto. 
+// Resultado: '[Object][Object]'*/
+// console.log(new BinaryOperator({}, {}).execute()) 
+
+class Sum extends BinaryOperator<number, number>{
+  execute(): number {
+    return this.op1 + this.op2
+  }
+}
+
+console.log(new Sum(3, 4).execute())
+
+//Desafio: criar uma classe que herde de BinaryOperator que calcula a diferença entre as datas
+class DiffDates extends BinaryOperator<Data, string>{
+  execute(): string {
+    const time1 = this.getTime(this.op1)
+    const time2 = this.getTime(this.op2)
+    const diff = Math.abs(time1 - time2)
+    const day = 1000 * 60 * 60 * 24 
+
+    return `${Math.ceil(diff / day)} dia(s)`
+  }
+
+  getTime(date: Data): number{
+    let {dia, mes, ano} = date
+    return new Date(`${mes}/${dia}/${ano}`).getTime()
+  }
+}
+
+const d1 = new Data(1, 4, 2022)
+const d2 = new Data(1, 1, 2021)
+
+console.log(new DiffDates(d1, d2).execute())
+
+//Desafio: criar uma classe Fila que possui atributo fila do tipo array e método entrar, próximo e imprimir

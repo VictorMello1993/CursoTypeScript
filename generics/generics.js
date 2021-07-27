@@ -42,4 +42,43 @@ print([
 ]);
 const callEcho = echoV2;
 console.log(callEcho('Alguma coisa'));
+//Generics com classes
+class BinaryOperator {
+    constructor(op1, op2) {
+        this.op1 = op1;
+        this.op2 = op2;
+    }
+}
+//Na classe acima, percebe-se que é permitido estabelecer mais de um tipo nos generics
+//Instanciando classes sem utilizar generics
+// console.log(new BinaryOperator('Bom', 'Dia').execute())
+// console.log(new BinaryOperator(3, 7).execute())
+// /*Comportamento estranho. Concatenação de objetos (what???). 
+// Ao invés de validar o tipo de parâmetro, simplesmente transforma tudo isso em representação de string e concatena junto. 
+// Resultado: '[Object][Object]'*/
+// console.log(new BinaryOperator({}, {}).execute()) 
+class Sum extends BinaryOperator {
+    execute() {
+        return this.op1 + this.op2;
+    }
+}
+console.log(new Sum(3, 4).execute());
+//Desafio: criar uma classe que herde de BinaryOperator que calcula a diferença entre as datas
+class DiffDates extends BinaryOperator {
+    execute() {
+        const time1 = this.getTime(this.op1);
+        const time2 = this.getTime(this.op2);
+        const diff = Math.abs(time1 - time2);
+        const day = 1000 * 60 * 60 * 24;
+        return `${Math.ceil(diff / day)} dia(s)`;
+    }
+    getTime(date) {
+        let { dia, mes, ano } = date;
+        return new Date(`${mes}/${dia}/${ano}`).getTime();
+    }
+}
+const d1 = new Data(1, 4, 2022);
+const d2 = new Data(1, 1, 2021);
+console.log(new DiffDates(d1, d2).execute());
+//Desafio: criar uma classe Fila que possui atributo fila do tipo array e método entrar, próximo e imprimir
 //# sourceMappingURL=generics.js.map
