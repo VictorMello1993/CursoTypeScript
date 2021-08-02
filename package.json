@@ -25,5 +25,8 @@
     "systemjs": "^0.21.6",
     "urix": "^0.1.0",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.6"
   }
 }
